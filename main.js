@@ -36,23 +36,32 @@ document.addEventListener('keydown', keycode);
 
 function keycode(event)
 {
-    let removeValue = [0, 3, 7, 12]; 
-    let removeVal = [0,1,2,3,4,5,6,7,8]; 
-    for (i=removeValue.length -1; i >= 0; i--)
-    {
-        if (event.code == 'Digit1')
-        {
-            myArray.splice(removeValue[i], 1);
-        }
-        
-    }
-    for (i=removeVal.length -1; i >= 0; i--)
+    let value1=200;
+    let value2=400; 
+    for (i=0; i < myArray.length; i++)
     {
         if (event.code == 'Digit2')
         {
-            myArray.splice(removeVal[i], 1);
+            if (myArray[i] == value1)
+            {
+                myArray.splice(i, 1);
+            }
+            
         }
         
     }
+    for (i=0; i < myArray.length; i++)
+    {
+        if (event.code == 'Digit1')
+        {
+            if (myArray[i] == value2)
+            {
+                myArray.splice(i, 1);
+            }
+            
+        }
+        
+    }
+    
     
 }
